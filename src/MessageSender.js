@@ -25,7 +25,7 @@ function MessageSender() {
         })
         setInput('');
         setimageUrl('');
-    }
+    };
 
     return (
         <div className='messageSender'>
