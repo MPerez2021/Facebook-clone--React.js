@@ -9,11 +9,13 @@ import ChatIcon from '@material-ui/icons/Chat';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { useStateValue } from './StateProvider';
 function Sidebar() {
+    const [{user}, dispatch] = useStateValue();
     return (
         <div className='sidebar'>
-            <SidebarRow src='https://st2.depositphotos.com/2931363/6511/i/600/depositphotos_65116237-stock-photo-happy-young-man-in-shirt.jpg' 
-            title='Mateo Pérez'/>        
+            <SidebarRow src={user.photoURL} 
+            title={user.displayName}/>        
             <SidebarRow Icon={LocalHospitalIcon} title='Centro de información COVID-19'/>
             <SidebarRow Icon={EmojiFlagsIcon} title='Páginas'/>
             <SidebarRow Icon={PeopleIcon} title='Amigos'/>
